@@ -1,437 +1,312 @@
-https://SEU-LINK-DO-FORMULARIO-AQUI
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RHF Talentos - Recrutamento & Seleção</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --azul-principal: #0057B8;
-      --azul-escuro: #003f87;
-      --laranja: #FF6F00;
-      --laranja-claro: #FF9E4D;
-      --cinza-fundo: #f8fafc;
-      --branco: #ffffff;
-      --cinza-texto: #475569;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Soluções de RH que Transformam | RHF Talentos</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --accent: #ff6b00;
+            --light-bg: #f9fbfd;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --success: #28a745;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: white;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #007bff);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        section {
+            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .service-summary {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        .btn:hover {
+            background: #e65c00;
+            transform: translateY(-2px);
+        }
+        .details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #eee;
+            display: none;
+        }
+        .details.show {
+            display: block;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* ✨ Fonte chique NATIVA para os exemplos */
+        .example-box {
+            background: var(--light-bg);
+            padding: 1.4rem;
+            border-radius: 10px;
+            margin: 1.2rem 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2c3e50;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            border-left: 3px solid var(--accent);
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--cinza-fundo);
-      color: var(--cinza-texto);
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--azul-principal), var(--azul-escuro));
-      color: var(--branco);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--azul-escuro);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: var(--laranja);
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
-
-    .cta-button:hover {
-      background-color: var(--laranja-claro);
-    }
-
-    section {
-      padding: 4rem 0;
-    }
-
-    .intro {
-      text-align: center;
-      padding: 3rem 0;
-    }
-
-    .intro p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-    }
-
-    .unique-value {
-      background: #eef7ff;
-      padding: 3rem 1.5rem;
-      border-radius: 16px;
-      margin: 3rem 0;
-    }
-
-    .unique-value h2 {
-      text-align: center;
-      color: var(--azul-principal);
-      margin-bottom: 1.5rem;
-    }
-
-    .unique-value p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-    }
-
-    .plans {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .plan-card {
-      background: var(--branco);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 2rem;
-      width: 100%;
-      max-width: 380px;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .plan-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--laranja);
-      color: white;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .plan-title {
-      color: var(--azul-principal);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .plan-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--azul-escuro);
-      margin: 1rem 0;
-    }
-
-    .plan-fee {
-      font-size: 0.95rem;
-      color: var(--cinza-texto);
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 1.5rem 0;
-      padding-left: 0;
-    }
-
-    ul li {
-      padding: 0.4rem 0;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    ul li::before {
-      content: "✓";
-      color: var(--laranja);
-      font-weight: bold;
-      margin-right: 0.6rem;
-    }
-
-    .example-btn {
-      background: transparent;
-      border: 1px solid var(--laranja);
-      color: var(--laranja);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 1rem;
-      width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    .example-btn:hover {
-      background: var(--laranja);
-      color: white;
-    }
-
-    .example-result {
-      margin-top: 1.2rem;
-      padding: 1rem;
-      background: #f0f9ff;
-      border-left: 4px solid var(--laranja);
-      border-radius: 8px;
-      display: none;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .highlight {
-      background-color: #eef7ff;
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 3rem 0;
-      text-align: center;
-    }
-
-    .highlight h2 {
-      color: var(--azul-principal);
-    }
-
-    footer {
-      background: var(--azul-escuro);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .plan-card {
-        max-width: 100%;
-      }
-    }
-  </style>
+        .benefits-list {
+            list-style: none;
+            margin: 1.2rem 0;
+        }
+        .benefits-list li {
+            margin: 0.6rem 0;
+            padding-left: 1.6rem;
+            position: relative;
+            font-size: 1.02rem;
+        }
+        .benefits-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .example-box {
+                font-size: 1rem;
+                padding: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Recrutamento & Seleção com Resultado Real</h1>
-      <p>Contrate os melhores talentos com agilidade, assertividade e economia de tempo e dinheiro.</p>
-      <a href="https://wa.me/5541984662171" target="_blank" class="cta-button">Fale com um consultor agora</a>
-    </div>
-  </header>
+<header>
+    <h1>Soluções de RH que Aceleram Seu Negócio</h1>
+    <p class="tagline">Profissionais certos, processos ágeis e investimentos inteligentes — tudo com transparência total e zero risco.</p>
+</header>
 
-  <section class="intro">
-    <div class="container">
-      <h2>Não entregamos currículos. Entregamos pessoas certas.</h2>
-      <p>Nossa abordagem é consultiva, estratégica e humanizada. Alinhamos perfil técnico, comportamental e cultural antes de indicar qualquer candidato.</p>
-    </div>
-  </section>
+<section>
+    <h2 class="section-title">Nossos Serviços</h2>
 
-  <section class="unique-value">
-    <div class="container">
-      <h2>Por que fechar com a RHF Talentos?</h2>
-      <p>Enquanto concorrentes enviam dezenas de currículos genéricos, nós entregamos <strong>até 3 candidatos pré-validados</strong>, com alinhamento estratégico à sua vaga, ao seu time e à sua cultura. Tudo isso com <strong>zero risco</strong>: você só paga o honorário se contratar.</p>
-    </div>
-  </section>
+    <!-- Recrutamento & Seleção -->
+    <div class="service-card">
+        <h3 class="service-title">Recrutamento & Seleção</h3>
+        <p class="service-summary">Encontramos o candidato perfeito para sua vaga — rápido, com fit cultural e validado tecnicamente. Você só paga se contratar!</p>
+        <button class="btn" onclick="toggleDetails('rs')">Ver mais detalhes</button>
+        <div id="rs" class="details">
+            <p><strong>Escolha o plano ideal para sua vaga:</strong></p>
 
-  <section class="plans-section">
-    <div class="container">
-      <h2 style="text-align: center;">Nossos Planos</h2>
-      <p style="text-align: center; margin-bottom: 2rem;">Escolha o plano ideal para o nível da sua vaga. Você paga a taxa de abertura para iniciar o processo — e só paga o honorário se contratar.</p>
+            <h4>Plano Essencial (Operacional / Apoio)</h4>
+            <div class="example-box">
+Vaga de Auxiliar Administrativo com salário de R$ 2.200  
+→ Você paga: R$ 250 (taxa fixa) + R$ 1.760 (80% do salário, cobrado SOMENTE se contratar) = R$ 2.010
+            </div>
+            <ul class="benefits-list">
+                <li>Zero risco: só paga o valor variável se aprovar o candidato</li>
+                <li>Evita 20+ entrevistas desnecessárias</li>
+                <li>Candidato já validado tecnicamente e comportamentalmente</li>
+            </ul>
 
-      <div class="plans">
-        <!-- Plano Essencial -->
-        <div class="plan-card">
-          <div class="plan-badge">Operacional</div>
-          <h3 class="plan-title">Plano Essencial</h3>
-          <p>Vagas operacionais e de apoio</p>
-          <div class="plan-price">R$ 250 + 80% do salário</div>
-          <div class="plan-fee">Mínimo de R$ 2.000 no fechamento</div>
-          <ul>
-            <li>Triagem técnica e curricular</li>
-            <li>Entrevista estruturada</li>
-            <li>Validação de requisitos</li>
-            <li>Indicação de finalistas</li>
-          </ul>
-          <button class="example-btn" onclick="toggleExample('ex1')">Veja um exemplo</button>
-          <div id="ex1" class="example-result">
-            <strong>Exemplo:</strong> Vaga de Auxiliar Administrativo com salário de R$ 2.200.<br>
-            → Você paga: <strong>R$ 250 (taxa de abertura fixa)</strong> + <strong>R$ 1.760 (80% de R$ 2.200, cobrado SOMENTE se contratar)</strong> = <strong>R$ 2.010</strong><br>
-            ✅ Zero risco: só paga o valor variável se aprovar o candidato<br>
-            ✅ Evita 20+ entrevistas desnecessárias<br>
-            ✅ Candidato já validado tecnicamente
-          </div>
+            <h4>Plano Profissional (Administrativo / Técnico)</h4>
+            <div class="example-box">
+Vaga de Analista Financeiro com salário de R$ 4.000  
+→ Você paga: R$ 300 (taxa fixa) + R$ 4.000 (100% do salário, somente após contratação)
+            </div>
+
+            <h4>Plano Estratégico (Liderança / Alta Complexidade)</h4>
+            <div class="example-box">
+Vaga de Gerente Comercial com salário de R$ 8.000  
+→ Você paga: R$ 500 (taxa fixa) + R$ 9.600 (120% do salário, somente após contratação)
+            </div>
         </div>
+    </div>
 
-        <!-- Plano Completo -->
-        <div class="plan-card">
-          <div class="plan-badge">Técnico / Analítico</div>
-          <h3 class="plan-title">Plano Completo</h3>
-          <p>Vagas técnicas, administrativas e analíticas</p>
-          <div class="plan-price">R$ 300 + 100% do salário</div>
-          <div class="plan-fee">Mínimo de R$ 3.000 no fechamento</div>
-          <ul>
-            <li>Tudo do Plano Essencial</li>
-            <li>Avaliação comportamental</li>
-            <li>Análise de cultura organizacional</li>
-            <li>Parecer técnico-comportamental detalhado</li>
-          </ul>
-          <button class="example-btn" onclick="toggleExample('ex2')">Veja um exemplo</button>
-          <div id="ex2" class="example-result">
-            <strong>Exemplo:</strong> Analista Financeiro com salário de R$ 4.500.<br>
-            → Você paga: <strong>R$ 300 (taxa de abertura)</strong> + <strong>R$ 4.500 (100% do salário, cobrado SOMENTE se contratar)</strong> = <strong>R$ 4.800</strong><br>
-            ✅ Reduz turnover em até 70%<br>
-            ✅ Contrata em até 10 dias<br>
-            ✅ Recebe candidato com alinhamento técnico e cultural
-          </div>
+    <!-- Plano de Cargos e Salários -->
+    <div class="service-card">
+        <h3 class="service-title">Plano de Cargos e Salários</h3>
+        <p class="service-summary">Estruture sua empresa com clareza, justiça e competitividade. Um plano feito sob medida para atrair e reter talentos.</p>
+        <button class="btn" onclick="toggleDetails('pcs')">Ver mais detalhes</button>
+        <div id="pcs" class="details">
+            <div class="example-box">
+Projeto completo para empresa com 30 colaboradores  
+→ Investimento: a partir de R$ 3.000 (com entrega em até 21 dias úteis)
+            </div>
+            <ul class="benefits-list">
+                <li>Diagnóstico gratuito da estrutura atual</li>
+                <li>Modelo justo e escalável para crescimento</li>
+                <li>Alinhamento com mercado e legislação</li>
+                <li>Inclui treinamento para gestores aplicarem o plano</li>
+            </ul>
         </div>
+    </div>
 
-        <!-- Plano Estratégico -->
-        <div class="plan-card">
-          <div class="plan-badge">Liderança</div>
-          <h3 class="plan-title">Plano Estratégico</h3>
-          <p>Cargos de liderança e estratégicos</p>
-          <div class="plan-price">R$ 350 + 120% do salário</div>
-          <div class="plan-fee">Mínimo de R$ 5.000 no fechamento</div>
-          <ul>
-            <li>Tudo do Plano Completo</li>
-            <li>Avaliação de perfil de liderança</li>
-            <li>Análise de riscos e maturidade</li>
-            <li>Orientações iniciais para gestão</li>
-          </ul>
-          <button class="example-btn" onclick="toggleExample('ex3')">Veja um exemplo</button>
-          <div id="ex3" class="example-result">
-            <strong>Exemplo:</strong> Supervisor de Produção com salário de R$ 6.000.<br>
-            → Você paga: <strong>R$ 350 (taxa de abertura)</strong> + <strong>R$ 7.200 (120% de R$ 6.000, cobrado SOMENTE se contratar)</strong> = <strong>R$ 7.550</strong><br>
-            ✅ Evita prejuízos por má escolha (até R$ 30 mil/ano)<br>
-            ✅ Ganho imediato de produtividade<br>
-            ✅ Perfil avaliado com profundidade estratégica
-          </div>
+    <!-- Treinamentos & Palestras -->
+    <div class="service-card">
+        <h3 class="service-title">Treinamentos & Palestras Corporativas</h3>
+        <p class="service-summary">Capacite sua equipe com conteúdos práticos, humanizados e alinhados aos desafios reais do seu negócio.</p>
+        <button class="btn" onclick="toggleDetails('treinamento')">Ver mais detalhes</button>
+        <div id="treinamento" class="details">
+            <div class="example-box">
+Palestra “Gestão do Tempo para Líderes” (presencial ou online)  
+→ Investimento: R$ 800 (até 30 pessoas)  
+→ Inclui material didático + relatório de engajamento
+            </div>
+            <ul class="benefits-list">
+                <li>Temas personalizados para sua realidade</li>
+                <li>Formatos flexíveis: presencial, híbrido ou 100% online</li>
+                <li>Resultados mensuráveis com feedback pós-evento</li>
+                <li>Opção de pacotes recorrentes com desconto</li>
+            </ul>
         </div>
-      </div>
     </div>
-  </section>
 
-  <section class="highlight">
-    <div class="container">
-      <h2>Você paga só se contratar!</h2>
-      <p>A taxa de abertura garante o início do processo. O honorário (80%, 100% ou 120% do salário) é cobrado <strong>uma única vez</strong> e <strong>somente após a aprovação do candidato</strong>. Sem mensalidades. Sem custos ocultos.</p>
+    <!-- RH Mensal -->
+    <div class="service-card">
+        <h3 class="service-title">RH Mensal / Administração de RH</h3>
+        <p class="service-summary">Tenha um RH completo sem burocracia. Folha, admissões, férias, compliance — tudo resolvido com um único parceiro.</p>
+        <button class="btn" onclick="toggleDetails('rhm')">Ver mais detalhes</button>
+        <div id="rhm" class="details">
+            <div class="example-box">
+Para empresa com até 20 colaboradores  
+→ Implantação: R$ 1.500 (única)  
+→ Mensalidade: a partir de R$ 1.500/mês
+            </div>
+            <ul class="benefits-list">
+                <li>Atendimento dedicado e proativo</li>
+                <li>Controle total de ponto, férias e benefícios</li>
+                <li>Atualização constante na legislação trabalhista</li>
+                <li>Economia de tempo e redução de riscos legais</li>
+            </ul>
+        </div>
     </div>
-  </section>
 
-  <!-- Nova seção: Botão que abre o modal -->
-  <section style="padding: 4rem 0; background-color: white;">
-    <div class="container">
-      <h2 style="text-align: center; color: var(--azul-principal); margin-bottom: 2rem;">Próximos passos: solicite sua vaga</h2>
-      <div style="text-align: center;">
-        <button id="openModalBtn" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
-          👉 Quero Contratar
-        </button>
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
-          Ao clicar, você verá as condições do processo antes de prosseguir.
-        </p>
-      </div>
+    <!-- Saúde Mental / NR-01 -->
+    <div class="service-card">
+        <h3 class="service-title">Saúde Mental & NR-01</h3>
+        <p class="service-summary">Proteja seus colaboradores e sua empresa com um diagnóstico psicossocial completo e soluções práticas de bem-estar.</p>
+        <button class="btn" onclick="toggleDetails('nr01')">Ver mais detalhes</button>
+        <div id="nr01" class="details">
+            <div class="example-box">
+Diagnóstico inicial + plano de ação para empresa com 25 colaboradores  
+→ Investimento: R$ 5.000 (entrega em 15 dias)
+            </div>
+            <ul class="benefits-list">
+                <li>Cumprimento garantido da NR-01</li>
+                <li>Redução de afastamentos e turnover</li>
+                <li>Workshops de conscientização inclusos</li>
+                <li>Relatório gerencial com indicadores claros</li>
+            </ul>
+        </div>
     </div>
-  </section>
 
-  <!-- Modal com as regras -->
-  <div id="termsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; max-width: 600px; width: 90%; padding: 2rem; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-      <button id="closeModal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #94a3b8;">&times;</button>
-      
-      <h3 style="color: var(--azul-principal); margin-bottom: 1.2rem; text-align: center;">Condições do Processo</h3>
-      
-      <p style="margin-bottom: 1.2rem;"><strong>Antes de preencher a ficha de solicitação de vaga, leia e valide as condições abaixo:</strong></p>
-      
-      <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Prazo para candidatos:</strong> Após contrato e pagamento da taxa de abertura, os primeiros candidatos são apresentados em 3 a 15 dias corridos.</li>
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Comunicação:</strong> Criamos um grupo no WhatsApp com você e o recrutador para alinhamento contínuo.</li>
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Retorno em 24h:</strong> Solicitamos feedback sobre os candidatos em até 24h para manter o processo ágil.</li>
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Sem testes práticos:</strong> A contratação deve ser formal desde o início, conforme a legislação trabalhista.</li>
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Reposição gratuita:</strong> Em caso de desligamento nos primeiros 30 dias, fazemos uma reposição sem custo adicional.</li>
-        <li style="display: flex; margin-bottom: 0.8rem;"><span style="color: var(--laranja); margin-right: 8px; font-weight: bold;">✓</span> <strong>Faturamento:</strong> Ocorre na aprovação do candidato (não no início das atividades), com vencimento em até 5 dias.</li>
-      </ul>
-
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
-          Ao continuar, você confirma estar de acordo com todas as condições acima.
-        </p>
-        <!-- 🔗 Substitua este link pelo seu formulário real -->
-        <a href="https://SEU-LINK-DO-FORMULARIO-AQUI" target="_blank" class="cta-button" style="padding: 0.8rem 2rem; font-size: 1rem; display: inline-block;">
-          Acessar Formulário
-        </a>
-      </div>
+    <!-- Avaliação Comportamental -->
+    <div class="service-card">
+        <h3 class="service-title">Avaliação Comportamental & Desempenho</h3>
+        <p class="service-summary">Descubra o potencial real dos seus colaboradores com ferramentas validadas e devolutivas personalizadas.</p>
+        <button class="btn" onclick="toggleDetails('avaliacao')">Ver mais detalhes</button>
+        <div id="avaliacao" class="details">
+            <div class="example-box">
+Avaliação DISC + devolutiva individual  
+→ Por pessoa: R$ 150  
+→ Para times: a partir de R$ 2.000 (15 pessoas)
+            </div>
+            <ul class="benefits-list">
+                <li>Melhora a comunicação entre líderes e equipes</li>
+                <li>Identifica gaps de desenvolvimento com precisão</li>
+                <li>Auxilia na montagem de times complementares</li>
+                <li>Relatório claro e aplicável no dia a dia</li>
+            </ul>
+        </div>
     </div>
-  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <p>RHF Talentos Regional Sul SZ</p>
-      <p><a href="https://www.rhf.com.br/sz" style="color:white;">www.rhf.com.br/sz</a> | (41) 98466-2171</p>
-      <p style="margin-top: 1rem;">© 2026 RHF Talentos. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+<footer>
+    <p>RHF Talentos Regional Sul SZ • www.rhf.com.br/sz • Fone: 41 98466-2171</p>
+    <p>© 2026 — Soluções de RH com propósito, resultado e transparência.</p>
+</footer>
 
-  <script>
-    function toggleExample(id) {
-      const el = document.getElementById(id);
-      if (el.style.display === "block") {
-        el.style.display = "none";
-      } else {
-        document.querySelectorAll('.example-result').forEach(e => e.style.display = 'none');
-        el.style.display = "block";
-      }
+<script>
+    function toggleDetails(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('show');
     }
-
-    // Modal de termos
-    document.getElementById('openModalBtn').addEventListener('click', function() {
-      document.getElementById('termsModal').style.display = 'flex';
-    });
-
-    document.getElementById('closeModal').addEventListener('click', function() {
-      document.getElementById('termsModal').style.display = 'none';
-    });
-
-    document.getElementById('termsModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.style.display = 'none';
-      }
-    });
-  </script>
+</script>
 
 </body>
 </html>
-
